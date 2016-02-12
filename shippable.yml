@@ -2,7 +2,7 @@ language: python
 
 python:
   - 3.4
-  - 2.7
+  #- 2.7
 
 env:
   global:
@@ -11,17 +11,7 @@ env:
   matrix:
     - M1=ONE
 
-build:
-  
-  pre_ci_boot:
-    image_name: drydock/u12pyt
-    image_tag: tip
-    pull: true
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-
-  ci:
-    - ps -eax
-    - ls -al
+script:
     - pip install -r requirements.txt
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
@@ -30,38 +20,3 @@ build:
   #  - coverage run `which nosetests` test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
    # - coverage xml -o shippable/codecoverage/coverage.xml
 
-integrations:
-  
-  notifications:
-    - integrationName: email
-      type: email
-      recipients: 
-        - shiphitchcock2@gmail.com
-        - vidya@shippable.com
-      
-      on_pull_request: always
-      on_start: always
-      on_success: always
-      on_failure: always
-
-    - integrationName: ship-slack
-      type: slack
-      recipients: 
-        - "#hitchcock1-public"
-        - pvt-channel
-      
-      on_start: always
-      on_pull_request: always
-      on_success: always
-      on_failure: always
- 
-    - integrationName: irc
-      type: irc
-      recipients: 
-        - "chat.freenode.net#test-cock"
-        - "chat.freenode.net#hitchcok2-irc"
-      
-      on_start: always
-      on_pull_request: always
-      on_success: always
-      on_failure: always 
