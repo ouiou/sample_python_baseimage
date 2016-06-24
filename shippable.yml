@@ -21,6 +21,7 @@ build:
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
   ci:
+    - echo $COMMITTER and $LAST_AUTHOR and $COMMIT_MESSAGE
     - ps -eax
     - ls -al
     - pip install -r requirements.txt
