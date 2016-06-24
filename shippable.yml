@@ -96,8 +96,8 @@ integrations:
         - owner=$ORG_NAME
         - source=Shippable
       on_success: always
-      on_start: always
-      on_failure: never
+      on_start: never
+      on_failure: always
   
     - integrationName: test-issuecreation2
       type: webhook
