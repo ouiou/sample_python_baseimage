@@ -99,7 +99,7 @@ integrations:
         - source=Shippable
       on_success: always
       on_start: always
-      on_failure: never
+      on_failure: always
   
     - integrationName: test-issuecreation22
       type: webhook
