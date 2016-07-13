@@ -52,7 +52,7 @@ integrations:
       on_success: always
       on_failure: always
       
-    - integrationName: ship-slack1
+    - integrationName: ship-slack
       type: slack
       recipients: 
         - "#hitchcock1-public"
@@ -74,7 +74,7 @@ integrations:
       on_success: always
       on_failure: always
       
-    - integrationName: ship-hipchat1
+    - integrationName: ship-hipchat
       type: hipchat
       recipients: 
       #  - "#pvt-room"
@@ -87,7 +87,7 @@ integrations:
       on_success: always
       on_failure: always
      
-    - integrationName: test-wh-fail1
+    - integrationName: test-wh-fail
       type: webhook
       payload:
         - title=success - $REPO_FULL_NAME - $BUILD_NUMBER
@@ -101,7 +101,7 @@ integrations:
       on_start: always
       on_failure: always
   
-    - integrationName: test-issuecreation22
+    - integrationName: test-issuecreation2
       type: webhook
       payload:
         - title=success testissucecreattion2 - $REPO_FULL_NAME - $BUILD_NUMBER
