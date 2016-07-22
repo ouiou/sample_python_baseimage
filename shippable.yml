@@ -11,6 +11,7 @@ env:
 
   matrix:
     - M1=ONE
+    - secure: KOx9YupYAdZMzOj2E2nqNwK7lSnA3yP6eiTxodVTVEL6nX3eKvyxUUpTY4jxYAwiMz0OQqFKG339lPjjm0daxx95WHTx0c2OSVSaQb46+jefVAjDZ9KAUvJ2rhHtt0VpGpmqJT1IIZtgXHX3bxpJ2kK8b9cC3Fae9Z7yMH4xzErKR4SWhIWYGB3XJ8aMVGAFk9jZZ5R1Iv/t1ebAGrz2t8pInWbDbmU6R1nVerECGq1VGJrH4ZLtOeyxw2jV/eY8A+3j2WjBvhnyMI0749lHq06m18dn8BtvYTB2oDHJESVggr8Qn77pbDb68uUbumVjOlhfSWaptNCKAKyjWYOQVA== 
 
 build:
   
@@ -21,6 +22,7 @@ build:
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
   ci:
+    - echo $user1
     - ps -eax
     - ls -al
     - pip install -r requirements.txt
